@@ -1,0 +1,21 @@
+.form-control
+{
+    width: 65%;
+}
+
+
+
+select {
+  margin: 2px;
+  width: 150px;
+  padding: 5px 35px 5px 5px;
+  font-size: 16px;
+  font-family: optima;
+  border: 2px solid #CCC;
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(/static/favicon.ico) 96% / 15% no-repeat #F8F8F8;
+}
+

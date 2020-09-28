@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <body>
+        <div class="jumbotron">
+            <form>
+                <div class="form-group">
+                    <center><p class="lead">Result:</p>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" readonly>{{ text }}</textarea></center>
+                </div>
+            </form>
+            <form action="/result" method="post">
+                <center><button class="btn btn-outline-secondary" type="submit">RETURN</button></form></center>
+        </div>
+    </body>
+{% endblock %}

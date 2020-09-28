@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <body>
+        <form action="/decrypt" method="post">
+        <div class="jumbotron">
+            <h1 class="display-4">Welcome to CIPHERTOOL!</h1>
+            <p class="lead">Use the dropdown below to select a decryption method.</p>
+            <hr class="my-4">
+            <p id="decrypt">Select the method with which your original message was encrypted.</p>
+            <p class="lead">
+            <select class="dropdown" name="dropdown">
+                <option value="caesar" name="caesar">CAESAR</option>
+                <option value="initial" name="none" selected>---</option>
+                <option value="reverse" name="reverse">REVERSE</option>
+                <option value="reflect" name="reflect">REFLECT</option>
+            </select>
+            <script>
+                document.querySelector('select').onchange = function() {
+                    var state = this.value;
+                    if (this.value === "caesar")
+                    {
+                        document.getElementById("decrypt").innerHTML = 'This algorithm would have shifted all the letters in your text a certain number of places down the alphabet.<br>Please enter a value that indicates how many letters your text was shifted by.<br><div class="form-group"><input class="form-control" name="number" placeholder="#" type="number" style="width:80px;"><p name="caeCi" style="visibility: hidden;"></p>';
+                    }
+                    if (this.value === "reflect")
+                    {
+                        document.getElementById("decrypt").innerHTML = "This algorithm would have split the alphabet down the middle, and reflected every letter to it's mirrored counterpart";
+                    }
+                    if (this.value === "initial")
+                    {
+                        document.getElementById("decrypt").innerHTML = "Select the method with which your original message was encrypted.";
+                    }
+                    if (this.value === "reverse")
+                    {
+                        document.getElementById("decrypt").innerHTML = "This algorithm would have reversed every individual character in your text.";
+                    }
+                }
+            </script>
+            <button class="btn btn-outline-secondary btn-sm" type="submit">CONTINUE</button>
+            </p>
+        </div>
+        </form>
+    </body>
+{% endblock %}
